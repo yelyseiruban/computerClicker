@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Clicker</string>
+    <string name="start">Start</string>
+    <string name="exit">Exit</string>
+    <string name="achievements">Achievements</string>
+    <string name="start_greeting">Welcome to Computer Clicker Game</string>
+    <string name="shop">Shop</string>
+</resources>
