@@ -5,4 +5,8 @@
     <string name="achievements">Achievements</string>
     <string name="start_greeting">Welcome to Computer Clicker Game</string>
     <string name="shop">Shop</string>
+    <string name="click_count">Click Count:</string>
+    <string name="clicks_s">Clicks/s:</string>
+    <string name="initial_clicks_count">0</string>
+    <string name="initial_clicks_per_second">0</string>
 </resources>

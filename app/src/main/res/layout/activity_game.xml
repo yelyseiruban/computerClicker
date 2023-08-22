@@ -1,41 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/lightBlue"
+    android:orientation="vertical"
     android:padding="10dp"
     tools:context=".activities.GameActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="512dp"
+        android:id="@+id/clickedComputer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="82dp"
         android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imac_main" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="bottom|center"
-        android:layout_weight="1"
-        >
+        android:textSize="26sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/darkBlue"
+        android:text="@string/click_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickedComputer" />
 
-        <Button
-            android:id="@+id/btnShop"
-            android:background="@drawable/ripple_effect"
-            android:layout_height="wrap_content"
-            android:layout_width="128dp"
-            android:backgroundTint="@color/blue"
-            android:textColor="@color/lightBlue"
-            android:textSize="26sp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:text="@string/shop" />
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/darkBlue"
+        android:text="@string/clicks_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnShop"
+        android:layout_width="128dp"
+        android:layout_height="52dp"
+        android:background="@drawable/ripple_effect"
+        android:backgroundTint="@color/blue"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/shop"
+        android:textColor="@color/lightBlue"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/clicksCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/darkBlue"
+        android:text="@string/initial_clicks_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/clicksPerSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/darkBlue"
+        android:text="@string/initial_clicks_per_second"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
