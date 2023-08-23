@@ -1,19 +1,16 @@
 package com.example.clicker.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clicker.ClickAction
 import com.example.clicker.GameState
 import com.example.clicker.R
 import com.example.clicker.StateAct
-import com.google.gson.Gson
-import java.io.File
 
 
 class GameActivity : AppCompatActivity() {
@@ -31,8 +28,11 @@ class GameActivity : AppCompatActivity() {
         setupClickersCount()
 
         val computer: ImageView = findViewById(R.id.clickedComputer)
+        val scaleUpAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_up)
+        val scaleDownAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_down)
         computer.setOnClickListener {
-
+            computer.startAnimation(scaleUpAnimation)
+            computer.startAnimation(scaleDownAnimation)
             clickAction.clickOnComputer()
             tvClicksCount.setText(clickAction.getPointsCount().toString())
 
