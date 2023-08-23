@@ -6,6 +6,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clicker.ClickAction
 import com.example.clicker.GameState
@@ -40,8 +41,14 @@ class GameActivity : AppCompatActivity() {
         val btnShop: Button = findViewById(R.id.btnShop)
         btnShop.setOnClickListener {
             stateAct.save()
-            val intent = Intent(this, ShopActivity::class.java)
-            startActivity(intent)
+            val shopIntent = Intent(this, ShopActivity::class.java)
+            startActivity(shopIntent)
+        }
+
+        val startScreenIntent = Intent(this, StartScreenActivity::class.java)
+        val btnBack: Button = findViewById(R.id.btnBack)
+        btnBack.setOnClickListener {
+            startActivity(startScreenIntent)
         }
     }
 
@@ -50,10 +57,6 @@ class GameActivity : AppCompatActivity() {
         stateAct.save()
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        stateAct.save()
-    }
 
     private fun setupGameState() {
         gameStateObj = stateAct.load()

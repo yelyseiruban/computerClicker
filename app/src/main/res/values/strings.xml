@@ -9,4 +9,8 @@
     <string name="clicks_s">Clicks/s:</string>
     <string name="initial_clicks_count">0</string>
     <string name="initial_clicks_per_second">0</string>
+    <string name="back">Back</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="exit_question">Are you sure you want to exit the app?</string>
 </resources>

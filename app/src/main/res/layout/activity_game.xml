@@ -50,9 +50,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
+        android:id="@+id/btnBack"
+        android:layout_width="128dp"
+        android:layout_height="52dp"
+        android:background="@drawable/ripple_effect"
+        android:backgroundTint="@color/blue"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/back"
+        android:textColor="@color/lightBlue"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnShop"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnShop"
         android:layout_width="128dp"
         android:layout_height="52dp"
+        android:layout_marginStart="68dp"
         android:background="@drawable/ripple_effect"
         android:backgroundTint="@color/blue"
         android:paddingLeft="10dp"
@@ -64,7 +82,7 @@
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnBack" />
 
     <TextView
         android:id="@+id/clicksCount"
