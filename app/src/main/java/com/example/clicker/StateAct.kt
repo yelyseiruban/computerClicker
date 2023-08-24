@@ -25,7 +25,9 @@ class StateAct(private val context: Context) : IStateAct {
             this.save()
         } else {
             this.state = GameState.getInstance()
+            println("Load state")
             load()
+            println(this.state.toString())
         }
     }
 
@@ -37,7 +39,7 @@ class StateAct(private val context: Context) : IStateAct {
 
     override fun load(): GameState {
         val stateJSON: String? = fileManager.load(FILE_NAME)
-        val loadedGameState =Gson().fromJson(stateJSON, GameState::class.java)
+        val loadedGameState = Gson().fromJson(stateJSON, GameState::class.java)
         this.update(loadedGameState)
         return state
     }

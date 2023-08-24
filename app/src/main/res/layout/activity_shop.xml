@@ -7,10 +7,333 @@
     android:background="@color/lightBlue"
     tools:context=".activities.ShopActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkBlue"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/shop_label"
+            android:textColor="@color/lightBlue"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivMouse"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/mouse_icon_item" />
+
+                    <TextView
+                        android:id="@+id/tvMouseTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/mouse"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvMouseCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvMousePrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_mouse_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivKeyboard"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/keyboard_icon_item" />
+
+                    <TextView
+                        android:id="@+id/tvKeyboardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/keyboard"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvKeyboardCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvKeyboardPrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_keyboard_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivProgrammer"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/programmer_icon_item" />
+
+                    <TextView
+                        android:id="@+id/tvProgrammerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/programmer"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvProgrammerCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvProgrammerPrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_programmer_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivFriends"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/friends_icon_item" />
+
+                    <TextView
+                        android:id="@+id/tvFriendsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/friends"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvFriendsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvFriendsPrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_friends_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivTeam"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/team_icon_item" />
+
+                    <TextView
+                        android:id="@+id/tvTeamTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/team"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvTeamCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvTeamPrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_team_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ivCompany"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:padding="10dp"
+                        android:src="@drawable/company_icon_item" />
+
+                    <TextView
+                        android:id="@+id/t"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/company"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tvCompanyCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="start|center"
+                        android:text="@string/initial_item_count"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvCompanyPrice"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center"
+                        android:text="@string/initial_company_price"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="26sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnBack"
         android:layout_width="128dp"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="141dp"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="16dp"
@@ -25,5 +348,7 @@
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

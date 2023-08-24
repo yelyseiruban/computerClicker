@@ -13,4 +13,18 @@
     <string name="no">NO</string>
     <string name="yes">YES</string>
     <string name="exit_question">Are you sure you want to exit the app?</string>
+    <string name="shop_label">SHOP</string>
+    <string name="mouse">Mouse:</string>
+    <string name="initial_mouse_price">10</string>
+    <string name="initial_item_count">0</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="initial_keyboard_price">100</string>
+    <string name="programmer">Programmer</string>
+    <string name="initial_programmer_price">5k</string>
+    <string name="friends">Friends</string>
+    <string name="initial_friends_price">80k</string>
+    <string name="team">Team</string>
+    <string name="initial_team_price">1M</string>
+    <string name="company">Company</string>
+    <string name="initial_company_price">50M</string>
 </resources>
