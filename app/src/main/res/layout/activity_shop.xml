@@ -31,7 +31,8 @@
 
         <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -325,7 +326,6 @@
                         android:textColor="@color/darkBlue"
                         android:textSize="26sp" />
                 </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -334,8 +334,7 @@
         android:id="@+id/btnBack"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginEnd="143dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/ripple_effect"
         android:backgroundTint="@color/blue"
@@ -347,8 +346,32 @@
         android:textColor="@color/lightBlue"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/balance"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:text="@string/initial_shop_balance"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
+        app:layout_constraintStart_toEndOf="@+id/textView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

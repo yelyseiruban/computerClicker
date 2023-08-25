@@ -1,6 +1,6 @@
 package com.example.clicker
 
-fun formatPrice(number: Long): String {
+fun formatNumber(number: Long): String {
     var doubleNumber = number.toDouble()
     when {
         (number >= 1_000_000_000_000L) -> {

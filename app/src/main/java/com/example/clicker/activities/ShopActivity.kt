@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.clicker.GameState
 import com.example.clicker.R
 import com.example.clicker.StateAct
-import com.example.clicker.formatPrice
+import com.example.clicker.formatNumber
 import com.example.clicker.shop.Item
 import com.example.clicker.shop.ItemName
 import com.example.clicker.shop.Shop
@@ -19,11 +19,24 @@ class ShopActivity : AppCompatActivity() {
     private lateinit var stateAct: StateAct
     private lateinit var gameState: GameState
     private lateinit var shop: Shop
+    private lateinit var tvBalance: TextView
+
+    private val gameStateObserver: (GameState) -> Unit = { newState ->
+        // Update your UI based on the newState
+        updateUI(newState)
+    }
+
+    private fun updateUI(gameState: GameState) {
+        tvBalance.text = gameState.pointsCount.toString()
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
         stateAct = StateAct(this)
         gameState = stateAct.load()
+        gameState.addObserver(gameStateObserver)
         shop = Shop(gameState)
 
         initShop()
@@ -59,20 +72,12 @@ class ShopActivity : AppCompatActivity() {
         val tvCompanyCount: TextView = findViewById(R.id.tvCompanyCount)
         val tvCompanyPrice: TextView = findViewById(R.id.tvCompanyPrice)
         val ivCompany: ImageView = findViewById(R.id.ivCompany)
+        tvBalance = findViewById(R.id.tvBalance)
         val setInitItemValues = { tvCount: TextView,  tvPrice: TextView, item: Item ->
-            println("something")
-            println(item.itemName)
-            println(item.boughtTimes)
             tvCount.text = item.boughtTimes.toString()
-            tvPrice.text = item.getCurrentPrice().toString()
-
+            tvPrice.text = formatNumber(item.getCurrentPrice())
         }
-//        shop.items.forEach { item ->
-//            run {
-//                println(item.key)
-//                println(item.value.boughtTimes)
-//            }
-//        }
+        tvBalance.text = formatNumber(shop.gameState.pointsCount)
         shop.items.forEach { item ->
             when (item.key) {
                 ItemName.MOUSE -> {
@@ -110,9 +115,10 @@ class ShopActivity : AppCompatActivity() {
         if(shop.buy(itemName)) {
             var itemCount = tvCount.text.toString().toInt()
             itemCount++
-            tvCount.setText(itemCount.toString())
-            val formattedPrice = formatPrice(shop.items[itemName]!!.getCurrentPrice())
-            tvPrice.setText(formattedPrice)
+            tvCount.text = itemCount.toString()
+            val formattedPrice = formatNumber(shop.items[itemName]!!.getCurrentPrice())
+            tvPrice.text = formattedPrice
+            tvBalance.text = shop.gameState.pointsCount.toString()
             successAnimation(ivIcon)
         } else {
             failAnimation(ivIcon)

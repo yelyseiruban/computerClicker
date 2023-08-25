@@ -27,4 +27,6 @@
     <string name="initial_team_price">1M</string>
     <string name="company">Company</string>
     <string name="initial_company_price">50M</string>
+    <string name="balance">Balance:</string>
+    <string name="initial_shop_balance">0</string>
 </resources>

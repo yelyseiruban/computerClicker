@@ -32,8 +32,13 @@ class StateAct(private val context: Context) : IStateAct {
     }
 
     override fun save() {
-        val stateJSON: String = Gson().toJson(state)
-        fileManager.save(FILE_NAME, stateJSON)
+        try {
+            val stateJSON: String = Gson().toJson(state)
+            println("State JSON: $stateJSON")
+            fileManager.save(FILE_NAME, stateJSON)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
 
@@ -45,7 +50,7 @@ class StateAct(private val context: Context) : IStateAct {
     }
 
     override fun update(gameState: GameState) {
-        this.state.updateInstance(gameState)
+        this.state.updateState(gameState)
     }
 
 }
