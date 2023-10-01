@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@color/lightBlue"
-    tools:context=".activities.StartScreenActivity">
+    android:background="#CAF0F8">
 
 
     <ImageView
-        android:id="@+id/ivStartScreen"
+        android:id="@+id/computerImageView"
         android:layout_width="match_parent"
-        android:layout_height="256dp"
-        android:paddingBottom="20dp"
+        android:layout_height="250dp"
         android:background="@color/backgroundBlue"
-        android:src="@drawable/imac_main" />
+        android:src="@drawable/imac_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/computer_description" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/initialGreetingsTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/start_greeting"
         android:textSize="30sp"
         android:textColor="@color/darkBlue"
         android:textStyle="bold"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:background="@color/backgroundBlue"
         android:padding="10dp"
-        android:text="@string/start_greeting" />
+        app:layout_constraintTop_toBottomOf="@id/computerImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
         android:id="@+id/btnStart"
@@ -37,27 +41,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/lightBlue"
+        android:textColor="@color/lightBackgroundBlue"
         android:textSize="26sp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
-        android:text="@string/start" />
-    <Button
-        android:id="@+id/btnAchievements"
-        android:background="@drawable/ripple_effect"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/blue"
-        android:textColor="@color/lightBlue"
-        android:textSize="26sp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:text="@string/achievements" />
+        android:text="@string/start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/initialGreetingsTextView"
+        />
+
     <Button
         android:id="@+id/btnExit"
         android:background="@drawable/ripple_effect"
@@ -65,12 +60,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/lightBlue"
+        android:textColor="@color/lightBackgroundBlue"
         android:textSize="26sp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
-        android:text="@string/exit" />
+        android:text="@string/exit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStart"
+        />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

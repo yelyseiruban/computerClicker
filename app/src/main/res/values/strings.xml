@@ -29,4 +29,5 @@
     <string name="initial_company_price">50M</string>
     <string name="balance">Balance:</string>
     <string name="initial_shop_balance">0</string>
+    <string name="computer_description">imac computer\n</string>
 </resources>
